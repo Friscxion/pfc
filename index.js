@@ -27,7 +27,19 @@ function main(player,opponent){
     else if(playerWin)console.log("Player a gagné!");
     else console.log("Player a perdu");
 }
+function getRandomInt() {
+    return Math.floor(Math.random() * 3);
+}
+
+function auto(player,opponent){
+    console.log(Object.keys(CHOIX),player)
+    let playerWin=isWin(Object.keys(CHOIX)[player],Object.keys(CHOIX)[opponent]);
+    if(playerWin===undefined) console.log("Un des input n'est pas valable!");
+    else if(playerWin===null)console.log("Egalité!");
+    else if(playerWin)console.log("Player a gagné!");
+    else console.log("Player a perdu");
+}
 
 main("pierre","pierre");
-
+auto(getRandomInt(),getRandomInt());
 module.exports={isWin}
