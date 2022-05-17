@@ -32,7 +32,6 @@ function getRandomInt() {
 }
 
 function auto(player,opponent){
-    console.log(Object.keys(CHOIX),player)
     let playerWin=isWin(Object.keys(CHOIX)[player],Object.keys(CHOIX)[opponent]);
     if(playerWin===undefined) console.log("Un des input n'est pas valable!");
     else if(playerWin===null)console.log("Egalité!");
@@ -40,6 +39,33 @@ function auto(player,opponent){
     else console.log("Player a perdu");
 }
 
-main("pierre","pierre");
-auto(getRandomInt(),getRandomInt());
+function match(player){
+    let scorePlayer=0;
+    let scoreOpponent=0;
+    while(scoreOpponent<5&&scorePlayer<5){
+        let opponent=Object.keys(CHOIX)[getRandomInt()]
+        let playerWin=isWin(player,opponent);
+        if(playerWin===undefined) {
+            console.log("Un des input n'est pas valable!")
+            return;
+        }
+        else if(playerWin===null) {
+            console.log("Egalité!")
+        }
+        else if(playerWin) {
+            scorePlayer++;
+            console.log("Player a gagné!")
+        }
+        else {
+            scoreOpponent++
+            console.log("Player a perdu")
+        }
+    }
+    if(scorePlayer-scoreOpponent<0){
+        console.log('Opponent gagne la partie')
+    }
+    else console.log('Player gagne la partie')
+
+}
+match("pierre","ciseau")
 module.exports={isWin}
