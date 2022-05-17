@@ -67,5 +67,5 @@ function match(player){
     else console.log('Player gagne la partie')
 
 }
-match("pierre","ciseau")
+match("pierre")
 module.exports={isWin}
