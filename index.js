@@ -19,26 +19,6 @@ function isWin(player,opponent){
     }
 }
 
-
-function main(player,opponent){
-    let playerWin=isWin(player,opponent);
-    if(playerWin===undefined) console.log("Un des input n'est pas valable!");
-    else if(playerWin===null)console.log("Egalité!");
-    else if(playerWin)console.log("Player a gagné!");
-    else console.log("Player a perdu");
-}
-function getRandomInt() {
-    return Math.floor(Math.random() * 3);
-}
-
-function auto(player,opponent){
-    let playerWin=isWin(Object.keys(CHOIX)[player],Object.keys(CHOIX)[opponent]);
-    if(playerWin===undefined) console.log("Un des input n'est pas valable!");
-    else if(playerWin===null)console.log("Egalité!");
-    else if(playerWin)console.log("Player a gagné!");
-    else console.log("Player a perdu");
-}
-
 function match(player){
     let scorePlayer=0;
     let scoreOpponent=0;
